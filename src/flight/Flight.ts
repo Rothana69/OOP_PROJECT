@@ -1,6 +1,6 @@
-import { Trip } from "./trip"
+
 
 export class Flight{
-    trip: Trip
+    trip: string
     constructor(private flight_number: string){}
 }
