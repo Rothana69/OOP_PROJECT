@@ -1,6 +1,6 @@
 import { Gender } from "../Gender";
 import { Person } from "../Person";
-import { Date } from "../../date_time/Date";
+import { Date } from "../../DateTime/Date";
 
 export enum Pilot_Category {
     CO_PILOT,

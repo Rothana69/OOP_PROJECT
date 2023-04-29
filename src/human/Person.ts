@@ -1,4 +1,4 @@
-import { Date } from "../date_time/Date";
+import { Date } from "../DateTime/Date";
 import { Gender } from "./Gender";
 export abstract class Person{
     protected first_name: string

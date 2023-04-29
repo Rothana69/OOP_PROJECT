@@ -1,5 +1,4 @@
-import { TripBooking } from "./booking_trip/Booking_Trip";
-
+import { TripBooking } from "./BookingTrip/BookingTrip";
 export class Booking{
     private bookingID: number;
     public tripBooking: TripBooking[]=[];
@@ -10,4 +9,7 @@ export class Booking{
     addTripBooking(tripBooking: TripBooking){
         this.tripBooking.push(tripBooking);
     };
+    // get_passegger(){
+    //     return this.passegger;
+    // }
 };

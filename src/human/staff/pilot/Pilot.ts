@@ -1,6 +1,6 @@
 import { Person } from "../../Person";
 import { Pilot_Category, Employees } from "../Employees";
-import { Date } from "../../../date_time/Date";
+import { Date } from "../../../DateTime/Date";
 import { Gender } from "../../Gender";
 import { Flight } from "../../../flight/Flight";
 

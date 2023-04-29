@@ -1,7 +1,7 @@
 export enum Meal{
-    vegetarian,
-    vegan,
-    dairy_free,
-    Halal,
-    Kosher,
+    VEGETARIAN,
+    VEGAN,
+    DAIRY_FREE,
+    HALAL,
+    KOSHER,
 }
