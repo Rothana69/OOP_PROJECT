@@ -8,7 +8,9 @@ export class BookingFlight{
     addFlight(flight: Flight){
         this.flight.push(flight);
     };
-
+    getFlight():Flight[]{
+        return this.flight;
+    }
     addMeal(meal: Meal){
         this.meal.push(meal);
     };

@@ -1,18 +1,24 @@
 import { Baggage } from "../human/meterial/Baggage";
+import { Passenger } from "../human/passenger/Passenger";
 import { TripBooking } from "./BookingTrip/BookingTrip";
 export class Booking{
     private bookingID: string;
+    public passenger: Passenger;
     private tripBooking: TripBooking[]=[];
     private baggage : Baggage[] = [];
-    constructor(bookingID: string,baggage : Baggage[]){
+    constructor(bookingID: string,baggage : Baggage[], passenger: Passenger){
         this.bookingID= bookingID;
         this.baggage = baggage;
+        this.passenger= passenger;
     };
 
     addTripBooking(tripBooking: TripBooking){
         this.tripBooking.push(tripBooking);
     };
-    // get_passegger(){
-    //     return this.passegger;
-    // }
+    getTripBooking(): TripBooking[]{
+        return this.tripBooking;
+    };
+    getPassenger(): Passenger{
+        return this.passenger;
+    };
 };

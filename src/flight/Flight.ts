@@ -3,10 +3,12 @@ import { Gate } from "../airport/Gate";
 import { Date } from "../DateTime/Date";
 import { Aeroplane } from "../company/plane/Aeroplane";
 export class Flight{
-    private flightNumber: String;
+    private flightNumber: string;
     private gate: Gate;
     private plane: Aeroplane;
     private date: Date;
+
+    
     private route: Route;
     constructor(flightNumber: string, gate: Gate,route:Route, plane: Aeroplane, date: Date) {
         this.flightNumber = flightNumber;
@@ -21,5 +23,7 @@ export class Flight{
     public getDate(): Date { 
         return this.date;
     }
-
+    getFlightNumber(): string{
+        return this.flightNumber;
+    }
 };                  

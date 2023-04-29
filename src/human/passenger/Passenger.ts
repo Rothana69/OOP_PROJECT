@@ -1,6 +1,9 @@
 import { Gate } from "../../airport/Gate";
 import { Booking } from "../../booking/Booking";
 import { Baggage } from "../meterial/Baggage";
+import { Gender } from "../Gender";
+import { Person } from "../Person";
+import { Date } from "../../DateTime/Date";
 import { Meal } from "./Meal";
 export class Passenger{
     private phoneNumber: string;
@@ -18,5 +21,4 @@ export class Passenger{
     public addBooking(booking: Booking){
         this.booking.push(booking);
     };
-
 };
