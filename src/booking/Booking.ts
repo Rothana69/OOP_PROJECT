@@ -1,4 +1,4 @@
-import { TripBooking } from "./booking_trip/Booking_Trip";
+import { TripBooking } from "./BookingTrip/BookingTrip";
 
 export class Booking{
     private bookingID: number;
