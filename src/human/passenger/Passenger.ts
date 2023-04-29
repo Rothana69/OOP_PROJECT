@@ -1,23 +1,23 @@
 import { Gate } from "../../airport/Gate";
 import { Booking } from "../../booking/Booking";
-import { Meal } from "./Meal";
+import { Gender } from "../Gender";
+import { Person } from "../Person";
+import { Date } from "../../DateTime/Date";
 
-export class Passenger{
+export class Passenger extends Person{
     private phone_number: string;
     private email_address: string;
-    private meal: Meal;
     public booking: Booking[]=[];
-    constructor(phone_number: string, email_address: string, meal: Meal){
+    constructor( first_name: string, last_name: string, gender: Gender, date_of_birth: Date, phone_number: string, email_address: string){
+        super(first_name, last_name, gender, date_of_birth);
         this.phone_number= phone_number;
         this.email_address= email_address;
-        this.meal= meal;
     };
 
     getBooking():Booking[]{
         return this.booking;
     };
-    addBooking(booking: Booking){
+    addBooking(booking: Booking): void{
         this.booking.push(booking);
     };
-
 };
