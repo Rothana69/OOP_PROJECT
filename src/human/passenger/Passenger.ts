@@ -9,10 +9,12 @@ export class Passenger extends Person{
     private phoneNumber: string;
     private emailAddress: string;
     public booking: Booking[]=[];
-    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date, phoneNumber: string, emailAddress: string){
+    private meal: Meal 
+    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date, phoneNumber: string, emailAddress: string, meal: Meal){
         super(firstName, lastName, gender, dateOfBirth)
         this.phoneNumber= phoneNumber;
         this.emailAddress= emailAddress;
+        this.meal = meal
     };
 
     public getBooking():Booking[]{
@@ -22,4 +24,8 @@ export class Passenger extends Person{
     public addBooking(booking: Booking){
         this.booking.push(booking);
     };
+    
+    public getMeal(): Meal{
+        return this.meal
+    }
 };
