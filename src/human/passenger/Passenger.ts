@@ -7,7 +7,6 @@ import { Meal } from "./Meal";
 import { BookingFlight } from "../../booking/BookingFlight/BookingFlight";
 import { TripBooking } from "../../booking/BookingTrip/BookingTrip";
 import { Flight } from "../../flight/Flight";
-import { Aeroplane } from "../../company/Airline";
 import { Aeroplane } from "../../company/plane/Aeroplane";
 export class Passenger{
     private phoneNumber: string;
@@ -24,27 +23,36 @@ export class Passenger{
     addBooking(booking: Booking): void{
         this.bookings.push(booking);
     };
-    findBookingTrip(plane: Aeroplane){
+    findBookingTrip(ifplane: Aeroplane){
         this.bookings.forEach(booking=>{
             let bookingTrips= booking.getTripBooking();
-            this.findBookingFlight(bookingTrips);
+            this.findBookingFlight(bookingTrips, ifplane);
         })
     };
-    findBookingFlight(bookingTrips: TripBooking[]){
+    findBookingFlight(bookingTrips: TripBooking[], ifplane: Aeroplane){
         for(let trip of bookingTrips){
             let bookingFlight= trip.getBookigFlight();
-            this.findAllFlights(bookingFlight);
+            this.findAllFlights(bookingFlight, ifplane);
         }
     };
-    findAllFlights(bookingFlight: BookingFlight[]){
+    findAllFlights(bookingFlight: BookingFlight[], ifplane:Aeroplane){
         for(let allflights of bookingFlight){
             let flights= allflights.getFlight();
-            this.findFlight(flights)
+            this.findFlight(flights, ifplane)
         }
     };
-    findFlight(flights: Flight[]){
+    findFlight(flights: Flight[], ifplane:Aeroplane){
         for(let flight of flights){
-            console.log(flight.getGate());
-        }
+            let plane= flight.getPlane();
+            if(plane.getRegistratinNumber()===ifplane.getRegistratinNumber()){
+                console.log(this.getGateOfPlane(flight.getGate()));
+            }
+            else{
+                console.log("Don't have this plane here");
+            }
+        };
+    };
+    getGateOfPlane(gate: Gate): string{
+        return ("Your plane is waiting for gate: "+gate.getGateNumber());
     }
 };

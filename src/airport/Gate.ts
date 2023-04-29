@@ -12,5 +12,8 @@ export class Gate{
     getFlight():Flight[]{
         return this.flights
     };
+    getGateNumber():string{
+        return this.gateNumber;
+    }
 
 }

@@ -15,4 +15,7 @@ export class Aeroplane {
     getFlight():Flight[]{
         return this.flight;
     };
+    getRegistratinNumber():string{
+        return this.registrationNumber;
+    }
 }

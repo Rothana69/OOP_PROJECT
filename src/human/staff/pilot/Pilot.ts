@@ -13,14 +13,4 @@ export class Pilot{
     public addFlight(flight: Flight){
         this.flights.push(flight)
     }
-    // public getFlights(date : Date) : Flight[]{
-    //     let pilotFlights: Flight[]= [];
-    //     this.flights.forEach(flight => {
-    //         if (flight.getDate() == date){
-    //             pilotFlights.push(flight);
-    //         }
-            
-    //     });
-    //     return pilotFlights;
-    // }
 }

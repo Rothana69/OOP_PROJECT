@@ -40,4 +40,7 @@ export class Flight {
     getFlightNumber(): string{
         return this.flightNumber;
     }
+    getPlane(): Aeroplane{
+        return this.plane;
+    }
 };                  
