@@ -11,9 +11,12 @@ export enum PilotCategory {
 export class Employee extends Person{
     protected salary: number
     protected category: PilotCategory
-    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date, salary: number, category: PilotCategory){
+    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date){
         super(firstName, lastName, gender, dateOfBirth)
-        this.salary = salary
+        
+    }
+
+    setCategory(category: PilotCategory){
         this.category = category
     }
 
