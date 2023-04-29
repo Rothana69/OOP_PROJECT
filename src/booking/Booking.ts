@@ -12,13 +12,16 @@ export class Booking{
         this.passenger= passenger;
     };
 
-    addTripBooking(tripBooking: TripBooking){
+    public addTripBooking(tripBooking: TripBooking){
         this.tripBooking.push(tripBooking);
     };
-    getTripBooking(): TripBooking[]{
+    public getTripBooking(): TripBooking[]{
         return this.tripBooking;
     };
-    getPassenger(): Passenger{
+    public getPassenger(): Passenger{
         return this.passenger;
     };
+    public getBookingID(){
+        return this.bookingID
+    }
 };

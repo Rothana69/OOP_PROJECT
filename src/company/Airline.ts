@@ -4,19 +4,26 @@ import { Flight } from "../flight/Flight";
 import { Meal } from "../human/passenger/Meal";
 import { Employee } from "../human/staff/Employee";
 import { Pilot } from "../human/staff/pilot/Pilot";
+import { Passenger } from "../human/passenger/Passenger";
+import { TripBooking } from "../booking/BookingTrip/BookingTrip";
+
 
 export class Airline {
     private airlineName: string;
     private flights: Flight[] = [];
-    private booking: Booking[];
-
+    private bookings: Booking[] = [];
+    private passengers: Passenger[] = [];
+    private employees: Employee[] = [];
     constructor(airlineName: string) {
         this.airlineName = airlineName;
     }
-    addflight(flight: Flight) {
+    public addEmployee(employee: Employee): void {
+        this.employees.push(employee);
+    }
+    public addflight(flight: Flight) {
         this.flights.push(flight);
     }
-    getFlights(pilot: Pilot, date: Date): Flight[] {
+    public getFlights(pilot: Pilot, date: Date): Flight[] {
         let flightOfPilot: Flight[] = []
         this.flights.forEach(flight => {
             if (flight.getPilot() == pilot && flight.getDate() == date) {
@@ -25,8 +32,48 @@ export class Airline {
         })
         return flightOfPilot;
     }
-
-    getAllMeals(): {
+    public getFlight(flight: Flight): Flight {
+        return flight;
+    };
+    public addBooking(booking: Booking): void {
+        this.bookings.push(booking);
+    };
+    public getBooking(): Booking[] {
+        return this.bookings;
+    };
+    public passengersReturnTicket(ifflight: Flight) {
+        let customer: Passenger;
+        this.bookings.forEach(passenger => {
+            let trip = passenger.getTripBooking();
+            customer = passenger.getPassenger()
+            this.findFlights(trip, ifflight, this.passengers, customer);
+        });
+    };
+    public findFlights(trips: TripBooking[], ifflight: Flight, passengers: Passenger[], customer: Passenger) {
+        for (let trip of trips) {
+            if (trip.getAReturnTicket() != undefined) {
+                let bookingFlight = trip.getBookigFlight();
+                for (let flights of bookingFlight) {
+                    let allFlight = flights.getFlight()
+                    this.findFlighNumber(allFlight, ifflight, passengers, customer);
+                }
+            }
+            else {
+                console.log("No Passenger have bought a return ticket");
+            }
+        }
+    }
+    public findFlighNumber(flights: Flight[], ifFlight: Flight, passengers: Passenger[], customer: Passenger) {
+        for (let flight of flights) {
+            if (flight.getFlightNumber() == ifFlight.getFlightNumber()) {
+                passengers.push(customer);
+            }
+        }
+    };
+    public getPassengersWithReturnTicket(): Passenger[] {
+        return this.passengers;
+    }
+    public getAllMeals(): {
         VEGETARIAN: number,
         VEGAN: number,
         DAIRY_FREE: number,
@@ -46,7 +93,7 @@ export class Airline {
             HALAL: 0,
             KOSHER: 0
         }
-        this.booking.forEach(passBooking => {
+        this.bookings.forEach(passBooking => {
             if (passBooking.getPassenger().getMeal() == Meal.VEGETARIAN) {
                 allMeals.VEGETARIAN += 1
             } else if (passBooking.getPassenger().getMeal() == Meal.VEGAN) {
@@ -60,5 +107,15 @@ export class Airline {
             }
         });
         return allMeals
+    }
+
+    public getAllSalary(): number {
+        let tatolSalary: number = 0;
+
+        this.employees.forEach(employee => {
+            tatolSalary += employee.getSalary()
+        });
+
+        return tatolSalary;
     }
 }

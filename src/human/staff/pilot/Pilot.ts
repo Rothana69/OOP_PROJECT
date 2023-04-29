@@ -4,13 +4,13 @@ import { Date } from "../../../DateTime/Date";
 import { Gender } from "../../Gender";
 import { Flight } from "../../../flight/Flight";
 
-export class Pilot{
+export class Pilot {
     private flights: Flight[] = []
     private employee: Employee
     constructor(employee: Employee) {
         this.employee = employee;
     }
-    public addFlight(flight: Flight){
+    public addFlight(flight: Flight) {
         this.flights.push(flight)
     }
 }

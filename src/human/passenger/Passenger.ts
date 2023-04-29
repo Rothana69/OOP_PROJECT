@@ -13,7 +13,7 @@ import { Aeroplane } from "../../company/plane/Aeroplane";
 export class Passenger extends Person{
     private phoneNumber: string;
     private emailAddress: string;
-    public bookings: Booking[]=[];
+    private bookings: Booking[]=[];
     private meal: Meal 
     constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date, phoneNumber: string, emailAddress: string, meal: Meal){
         super(firstName, lastName, gender, dateOfBirth)
@@ -33,25 +33,25 @@ export class Passenger extends Person{
     public getMeal(): Meal{
         return this.meal
     }
-    findBookingTrip(ifplane: Aeroplane){
+    public findBookingTrip(ifplane: Aeroplane){
         this.bookings.forEach(booking=>{
             let bookingTrips= booking.getTripBooking();
             this.findBookingFlight(bookingTrips, ifplane);
         })
     };
-    findBookingFlight(bookingTrips: TripBooking[], ifplane: Aeroplane){
+    public findBookingFlight(bookingTrips: TripBooking[], ifplane: Aeroplane){
         for(let trip of bookingTrips){
             let bookingFlight= trip.getBookigFlight();
             this.findAllFlights(bookingFlight, ifplane);
         }
     };
-    findAllFlights(bookingFlight: BookingFlight[], ifplane:Aeroplane){
+    public findAllFlights(bookingFlight: BookingFlight[], ifplane:Aeroplane){
         for(let allflights of bookingFlight){
             let flights= allflights.getFlight();
             this.findFlight(flights, ifplane)
         }
     };
-    findFlight(flights: Flight[], ifplane:Aeroplane){
+    public findFlight(flights: Flight[], ifplane:Aeroplane){
         for(let flight of flights){
             let plane= flight.getPlane();
             if(plane.getRegistratinNumber()===ifplane.getRegistratinNumber()){
@@ -62,7 +62,7 @@ export class Passenger extends Person{
             }
         };
     };
-    getGateOfPlane(gate: Gate): string{
+    public getGateOfPlane(gate: Gate): string{
         return ("Your plane is waiting at gate: "+gate.getGateNumber());
     }
 };

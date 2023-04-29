@@ -8,19 +8,19 @@ export enum PilotCategory {
     CHIEF
 }
 
-export class Employee extends Person{
+export class Employee extends Person {
     protected salary: number
     protected category: PilotCategory
-    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date, salary: number){
+    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date, salary: number) {
         super(firstName, lastName, gender, dateOfBirth)
         this.salary = salary
-        
+
     }
-    setCategory(category: PilotCategory){
+    public setCategory(category: PilotCategory) {
         this.category = category
     }
 
-    public getSalary(): number{
+    public getSalary(): number {
         return this.salary
     }
 }

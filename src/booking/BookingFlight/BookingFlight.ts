@@ -2,16 +2,16 @@ import { Flight } from "../../flight/Flight";
 import { Meal } from "../../human/passenger/Meal";
 
 export class BookingFlight{
-    public flight: Flight[]=[];
-    public meal: Meal[]=[];
+    private flight: Flight[]=[];
+    private meal: Meal[]=[];
 
-    addFlight(flight: Flight){
+    public addFlight(flight: Flight){
         this.flight.push(flight);
     };
-    getFlight():Flight[]{
+    public getFlight():Flight[]{
         return this.flight;
     }
-    addMeal(meal: Meal){
+    public addMeal(meal: Meal){
         this.meal.push(meal);
     };
 };

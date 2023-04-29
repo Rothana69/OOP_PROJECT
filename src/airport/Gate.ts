@@ -2,17 +2,17 @@ import { Flight } from "../flight/Flight";
 
 export class Gate{
     private gateNumber:string
-    public flights: Flight[]=[];
+    private flights: Flight[]=[];
     constructor(gateNumber:string){
         this.gateNumber = gateNumber
     };
-    addFlight(flight:Flight){
+    public addFlight(flight:Flight){
         this.flights.push(flight);
     };
-    getFlight():Flight[]{
+    public getFlight():Flight[]{
         return this.flights
     };
-    getGateNumber():string{
+    public getGateNumber():string{
         return this.gateNumber;
     }
 

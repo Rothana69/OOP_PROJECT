@@ -2,19 +2,19 @@ import { Flight } from "../../flight/Flight";
 import { Seat } from "./Seat";
 export class Aeroplane {
     private registrationNumber: string
-    public flight: Flight[]=[];
+    private flight: Flight[]=[];
     constructor(registrationNumber: string, private seat : Seat[]) {
         this.registrationNumber = registrationNumber;
         
     };
 
-    addFlight(flight: Flight){
+    public addFlight(flight: Flight){
         this.flight.push(flight);
     };
-    getFlight():Flight[]{
+    public getFlight():Flight[]{
         return this.flight;
     };
-    getRegistratinNumber():string{
+    public getRegistratinNumber():string{
         return this.registrationNumber;
     }
 }

@@ -35,10 +35,10 @@ export class Flight {
     public getDate(): Date {
         return this.date;
     }
-    getFlightNumber(): string{
+    public getFlightNumber(): string{
         return this.flightNumber;
     }
-    getPlane(): Aeroplane{
+    public getPlane(): Aeroplane{
         return this.plane;
     }
 };                  
