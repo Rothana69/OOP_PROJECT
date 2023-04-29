@@ -6,8 +6,8 @@ import { Flight } from "../../../flight/Flight";
 
 export class Pilot extends Employee{
     private flights: Flight[] = []
-    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date){
-        super(firstName, lastName, gender, dateOfBirth, PilotCategory.CO_PILOT)
+    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date, salary: number){
+        super(firstName, lastName, gender, dateOfBirth, salary, PilotCategory.CO_PILOT)
     }
     public addFlight(flight: Flight){
         this.flights.push(flight)

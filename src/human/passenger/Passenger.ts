@@ -1,5 +1,6 @@
 import { Gate } from "../../airport/Gate";
 import { Booking } from "../../booking/Booking";
+import { Baggage } from "../meterial/Baggage";
 import { Meal } from "./Meal";
 
 export class Passenger{
@@ -13,10 +14,11 @@ export class Passenger{
         this.meal= meal;
     };
 
-    getBooking():Booking[]{
+    public getBooking():Booking[]{
         return this.booking;
     };
-    addBooking(booking: Booking){
+
+    public addBooking(booking: Booking){
         this.booking.push(booking);
     };
 
