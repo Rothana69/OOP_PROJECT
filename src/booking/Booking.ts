@@ -3,7 +3,7 @@ import { Passenger } from "../human/passenger/Passenger";
 import { TripBooking } from "./BookingTrip/BookingTrip";
 export class Booking{
     private bookingID: string;
-    public passenger: Passenger;
+    private passenger: Passenger;
     private tripBooking: TripBooking[]=[];
     private baggage : Baggage[] = [];
     constructor(bookingID: string,baggage : Baggage[], passenger: Passenger){

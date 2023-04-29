@@ -1,12 +1,12 @@
 import { Date } from "../DateTime/Date";
 import { Booking } from "../booking/Booking";
 import { Flight } from "../flight/Flight";
+import { Meal } from "../human/passenger/Meal";
 import { Employee } from "../human/staff/Employee";
 import { Pilot } from "../human/staff/pilot/Pilot";
 import { Passenger } from "../human/passenger/Passenger";
 import { TripBooking } from "../booking/BookingTrip/BookingTrip";
-import { CoPilot } from "../human/staff/pilot/Co_Pilot";
-import { Chief } from "../human/staff/chief/chief";
+
 
 export class Airline {
     private airlineName: string;
@@ -70,10 +70,49 @@ export class Airline {
     getPassengersWithReturnTicket(): Passenger[]{
         return this.passengers;
     }
-    addEmployee(employee: Employee|Pilot|CoPilot|Chief){
-        this.employees.push(employee);
-    };
-    getEmployee(): Employee[]{
-        return this.employees;
-    };
+    getAllMeals():{
+        VEGETARIAN: number,
+        VEGAN: number,
+        DAIRY_FREE: number,
+        HALAL: number,
+        KOSHER: number
+        }{
+        let allMeals: {
+        VEGETARIAN: number,
+        VEGAN: number,
+        DAIRY_FREE: number,
+        HALAL: number,
+        KOSHER: number
+        } ={
+            VEGETARIAN: 0,
+            VEGAN: 0,
+            DAIRY_FREE: 0,
+            HALAL: 0,
+            KOSHER: 0
+        }
+        this.bookings.forEach(passBooking => {
+            if(passBooking.getPassenger().getMeal() == Meal.VEGETARIAN){
+                allMeals.VEGETARIAN += 1
+            }else if(passBooking.getPassenger().getMeal() == Meal.VEGAN){
+                allMeals.VEGAN += 1
+            }else if(passBooking.getPassenger().getMeal() == Meal.DAIRY_FREE){
+                allMeals.DAIRY_FREE += 1
+            }else if(passBooking.getPassenger().getMeal() == Meal.HALAL){
+                allMeals.HALAL += 1
+            }else if(passBooking.getPassenger().getMeal() == Meal.KOSHER){
+                allMeals.KOSHER += 1
+            }
+        });
+        return allMeals
+    }
+
+    getAllSalary(): number{
+        let tatolSalary: number = 0;
+
+        this.employees.forEach(employee => {
+            tatolSalary += employee.getSalary()
+        });
+
+        return tatolSalary;
+    }
 }
