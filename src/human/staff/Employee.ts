@@ -16,7 +16,7 @@ export class Employee extends Person{
         this.salary = salary
         
     }
-    setCategory(category: PilotCategory){
+    public setCategory(category: PilotCategory){
         this.category = category
     }
 

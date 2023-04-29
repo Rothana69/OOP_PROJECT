@@ -8,8 +8,8 @@ import { Pilot } from "../human/staff/pilot/Pilot";
 export class Airline {
     private airlineName: string;
     private flights: Flight[]=[];
-    private booking: Booking[];
-    
+    private booking: Booking[] = [];
+    private employees: Employee[] = []
     constructor(airlineName: string) {
         this.airlineName = airlineName;
     }
@@ -60,5 +60,15 @@ export class Airline {
             }
         });
         return allMeals
+    }
+
+    getAllSalary(): number{
+        let tatolSalary: number = 0;
+
+        this.employees.forEach(employee => {
+            tatolSalary += employee.getSalary()
+        });
+
+        return tatolSalary;
     }
 }
