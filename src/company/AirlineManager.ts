@@ -13,9 +13,9 @@ export class Airline_Manager extends Person{
         super (first_name, last_name, gender, date_of_birth);
 
     };
-    // getFlight(flight: Flight): Flight{
-    //     return flight;
-    // };
+    getFlight(flight: Flight): Flight{
+        return flight;
+    };
     addBooking(booking: Booking):void{
         this.booking.push(booking);
     };

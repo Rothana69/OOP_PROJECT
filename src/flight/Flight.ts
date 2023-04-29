@@ -17,7 +17,7 @@ export class Flight{
         this.plane = plane;
         this.route = route;
     };
-    public getGate(): Gate { 
+    public getGate(): Gate{ 
         return this.gate;
     }
     public getDate(): Date { 
