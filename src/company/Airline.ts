@@ -7,9 +7,9 @@ import { Pilot } from "../human/staff/pilot/Pilot";
 
 export class Airline {
     private airlineName: string;
-    private flights: Flight[]=[];
+    private flights: Flight[] = [];
     private booking: Booking[];
-    
+
     constructor(airlineName: string) {
         this.airlineName = airlineName;
     }
@@ -26,20 +26,20 @@ export class Airline {
         return flightOfPilot;
     }
 
-    getAllMeals():{
+    getAllMeals(): {
         VEGETARIAN: number,
         VEGAN: number,
         DAIRY_FREE: number,
         HALAL: number,
         KOSHER: number
-        }{
+    } {
         let allMeals: {
-        VEGETARIAN: number,
-        VEGAN: number,
-        DAIRY_FREE: number,
-        HALAL: number,
-        KOSHER: number
-        } ={
+            VEGETARIAN: number,
+            VEGAN: number,
+            DAIRY_FREE: number,
+            HALAL: number,
+            KOSHER: number
+        } = {
             VEGETARIAN: 0,
             VEGAN: 0,
             DAIRY_FREE: 0,
@@ -47,15 +47,15 @@ export class Airline {
             KOSHER: 0
         }
         this.booking.forEach(passBooking => {
-            if(passBooking.getPassenger().getMeal() == Meal.VEGETARIAN){
+            if (passBooking.getPassenger().getMeal() == Meal.VEGETARIAN) {
                 allMeals.VEGETARIAN += 1
-            }else if(passBooking.getPassenger().getMeal() == Meal.VEGAN){
+            } else if (passBooking.getPassenger().getMeal() == Meal.VEGAN) {
                 allMeals.VEGAN += 1
-            }else if(passBooking.getPassenger().getMeal() == Meal.DAIRY_FREE){
+            } else if (passBooking.getPassenger().getMeal() == Meal.DAIRY_FREE) {
                 allMeals.DAIRY_FREE += 1
-            }else if(passBooking.getPassenger().getMeal() == Meal.HALAL){
+            } else if (passBooking.getPassenger().getMeal() == Meal.HALAL) {
                 allMeals.HALAL += 1
-            }else if(passBooking.getPassenger().getMeal() == Meal.KOSHER){
+            } else if (passBooking.getPassenger().getMeal() == Meal.KOSHER) {
                 allMeals.KOSHER += 1
             }
         });
