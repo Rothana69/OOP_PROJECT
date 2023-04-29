@@ -1,3 +1,8 @@
-export class Aeroplanes{
-    constructor(private seat: number, private registration_number: number){}
+import { Seat } from "./Seat";
+export class Aeroplanes {
+    private seat : Seat[] = [];
+    constructor(
+        private registration_number: number) {
+
+    }
 }
