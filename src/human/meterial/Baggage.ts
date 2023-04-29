@@ -7,5 +7,4 @@ export class Baggage {
         this.bagID = bagID;
         this.tagID  = tagID;
     }
-
 }

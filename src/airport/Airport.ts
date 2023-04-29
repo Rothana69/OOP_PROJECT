@@ -1,3 +1,5 @@
+import { Booking } from "../booking/Booking";
+import { Passenger } from "../human/passenger/Passenger";
 import { Gate } from "./Gate";
 import { Route } from "./Route";
 
