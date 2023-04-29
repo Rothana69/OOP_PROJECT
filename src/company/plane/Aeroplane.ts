@@ -4,6 +4,5 @@ export class Aeroplane {
     
     constructor(registrationNumber: string, private seat : Seat[]) {
         this.registrationNumber = registrationNumber;
-        
     }
 }
