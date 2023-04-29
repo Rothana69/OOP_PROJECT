@@ -7,10 +7,8 @@ export class Flight{
     private gate: Gate;
     private plane: Aeroplane;
     private date: Date;
-
-    
     private route: Route;
-    constructor(flightNumber: string, gate: Gate,route:Route, plane: Aeroplane, date: Date) {
+    constructor(flightNumber: string, gate: Gate, route:Route, plane: Aeroplane, date: Date) {
         this.flightNumber = flightNumber;
         this.date = date;
         this.gate = gate;

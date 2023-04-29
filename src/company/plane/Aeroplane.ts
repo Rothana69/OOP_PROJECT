@@ -1,9 +1,9 @@
 import { Seat } from "./Seat";
 export class Aeroplane {
     private registrationNumber: string
-    
-    constructor(registrationNumber: string, private seat : Seat[]) {
+    private seat : Seat[] = []
+    constructor(registrationNumber: string, seats: Seat[]) {
         this.registrationNumber = registrationNumber;
-        
+        this.seat = seats
     }
 }

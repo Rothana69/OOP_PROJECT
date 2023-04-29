@@ -5,11 +5,12 @@ import { Gender } from "../Gender";
 import { Person } from "../Person";
 import { Date } from "../../DateTime/Date";
 import { Meal } from "./Meal";
-export class Passenger{
+export class Passenger extends Person{
     private phoneNumber: string;
     private emailAddress: string;
     public booking: Booking[]=[];
-    constructor(phoneNumber: string, emailAddress: string){
+    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date, phoneNumber: string, emailAddress: string){
+        super(firstName, lastName, gender, dateOfBirth)
         this.phoneNumber= phoneNumber;
         this.emailAddress= emailAddress;
     };
