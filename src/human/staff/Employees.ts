@@ -4,7 +4,8 @@ import { Date } from "../../date_time/Date";
 
 export enum Pilot_Category {
     CO_PILOT,
-    PILOT
+    PILOT,
+    CHIEF
 }
 
 export class Employees extends Person{

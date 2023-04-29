@@ -2,10 +2,14 @@ import { Person } from "../../Person";
 import { Pilot_Category, Employees } from "../Employees";
 import { Date } from "../../../date_time/Date";
 import { Gender } from "../../Gender";
+import { Flight } from "../../../flight/Flight";
 
 export class Pilot extends Employees{
+    private flights: Flight[] = []
     constructor(first_name: string, last_name: string, gender: Gender, date_of_birth: Date){
         super(first_name, last_name, gender, date_of_birth, Pilot_Category.PILOT)
     }
-    
+    public addFlight(flight: Flight){
+        this.flights.push(flight)
+    }
 }
