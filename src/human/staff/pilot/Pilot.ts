@@ -4,12 +4,23 @@ import { Date } from "../../../DateTime/Date";
 import { Gender } from "../../Gender";
 import { Flight } from "../../../flight/Flight";
 
-export class Pilot extends Employee{
+export class Pilot{
     private flights: Flight[] = []
-    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date){
-        super(firstName, lastName, gender, dateOfBirth, PilotCategory.PILOT)
+    private employee: Employee
+    constructor(employee: Employee) {
+        this.employee = employee;
     }
     public addFlight(flight: Flight){
         this.flights.push(flight)
     }
+    // public getFlights(date : Date) : Flight[]{
+    //     let pilotFlights: Flight[]= [];
+    //     this.flights.forEach(flight => {
+    //         if (flight.getDate() == date){
+    //             pilotFlights.push(flight);
+    //         }
+            
+    //     });
+    //     return pilotFlights;
+    // }
 }
