@@ -1,9 +1,20 @@
+import { Flight } from "../../flight/Flight";
 import { Seat } from "./Seat";
 export class Aeroplane {
     private registrationNumber: string
-    private seat : Seat[] = []
-    constructor(registrationNumber: string, seats: Seat[]) {
+    public flight: Flight[]=[];
+    constructor(registrationNumber: string, private seat : Seat[]) {
         this.registrationNumber = registrationNumber;
-        this.seat = seats
+        
+    };
+
+    addFlight(flight: Flight){
+        this.flight.push(flight);
+    };
+    getFlight():Flight[]{
+        return this.flight;
+    };
+    getRegistratinNumber():string{
+        return this.registrationNumber;
     }
 }
