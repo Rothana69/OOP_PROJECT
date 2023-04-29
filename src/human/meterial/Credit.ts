@@ -1,3 +1,3 @@
-export class Credit_card {
+export class CreditCard {
     
 }
