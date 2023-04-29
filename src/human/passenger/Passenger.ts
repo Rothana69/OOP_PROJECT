@@ -1,5 +1,6 @@
 import { Gate } from "../../airport/Gate";
 import { Booking } from "../../booking/Booking";
+import { Baggage } from "../meterial/Baggage";
 import { Gender } from "../Gender";
 import { Person } from "../Person";
 import { Date } from "../../DateTime/Date";
@@ -8,19 +9,22 @@ import { BookingFlight } from "../../booking/BookingFlight/BookingFlight";
 import { TripBooking } from "../../booking/BookingTrip/BookingTrip";
 import { Flight } from "../../flight/Flight";
 import { Aeroplane } from "../../company/plane/Aeroplane";
-export class Passenger{
+
+export class Passenger extends Person{
     private phoneNumber: string;
     private emailAddress: string;
     public bookings: Booking[]=[];
-    constructor(phoneNumber: string, emailAddress: string){
+    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date, phoneNumber: string, emailAddress: string){
+        super(firstName, lastName, gender, dateOfBirth)
         this.phoneNumber= phoneNumber;
         this.emailAddress= emailAddress;
     };
 
-    getBooking():Booking[]{
+    public getBooking():Booking[]{
         return this.bookings;
     };
-    addBooking(booking: Booking): void{
+
+    public addBooking(booking: Booking){
         this.bookings.push(booking);
     };
     findBookingTrip(ifplane: Aeroplane){
@@ -53,6 +57,6 @@ export class Passenger{
         };
     };
     getGateOfPlane(gate: Gate): string{
-        return ("Your plane is waiting for gate: "+gate.getGateNumber());
+        return ("Your plane is waiting at gate: "+gate.getGateNumber());
     }
 };

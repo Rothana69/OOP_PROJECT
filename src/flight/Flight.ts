@@ -9,8 +9,6 @@ export class Flight {
     private gate: Gate;
     private plane: Aeroplane;
     private date: Date;
-
-    
     private route: Route;
     private pilot : Pilot;
     private coPilot : CoPilot;

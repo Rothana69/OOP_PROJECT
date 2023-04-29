@@ -1,17 +1,19 @@
+import { Booking } from "../booking/Booking";
+import { Passenger } from "../human/passenger/Passenger";
 import { Gate } from "./Gate";
 import { Route } from "./Route";
 
 export class Airport{
-    private airport_name: string;
-    private gate_number: Gate[] = [];
-    private route_number: Route[] = [];
-    constructor(airport_name: string){
-        this.airport_name = airport_name;
+    private airportName: string;
+    private gateNumber: Gate[] = [];
+    private routeNumber: Route[] = [];
+    constructor(airportName: string){
+        this.airportName = airportName;
     }
-    add_gate(gate: Gate):void{
-        this.gate_number.push(gate);
+    addGate(gate: Gate):void{
+        this.gateNumber.push(gate);
     }
-    add_route(route: Route): void{
-        this.route_number.push(route);
+    addRoute(route: Route): void{
+        this.routeNumber.push(route);
     }
 }

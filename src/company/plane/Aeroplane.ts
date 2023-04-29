@@ -5,7 +5,6 @@ export class Aeroplane {
     public flight: Flight[]=[];
     constructor(registrationNumber: string, private seat : Seat[]) {
         this.registrationNumber = registrationNumber;
-        this.seat= seat;
         
     };
 

@@ -6,11 +6,12 @@ import { Booking } from "../booking/Booking";
 import { BookingFlight } from "../booking/BookingFlight/BookingFlight";
 import { TripBooking } from "../booking/BookingTrip/BookingTrip";
 import { Passenger } from "../human/passenger/Passenger";
-export class Airline_Manager extends Person{
+import { Employee } from "../human/staff/Employee";
+export class AirlineManager extends Employee{
     public booking: Booking[]=[];
     public passengers: Passenger[]=[];
-    constructor(public first_name: string, public last_name: string, public gender: Gender,public date_of_birth: Date){
-        super (first_name, last_name, gender, date_of_birth);
+    constructor(public first_name: string, public last_name: string, public gender: Gender,public date_of_birth: Date,salary:number){
+        super (first_name, last_name, gender, date_of_birth, salary);
 
     };
     getFlight(flight: Flight): Flight{
