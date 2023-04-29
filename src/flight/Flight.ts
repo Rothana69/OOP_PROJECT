@@ -5,10 +5,12 @@ import { Aeroplane } from "../company/plane/Aeroplane";
 import { Pilot } from "../human/staff/pilot/Pilot";
 import { CoPilot } from "../human/staff/pilot/Co_Pilot";
 export class Flight {
-    private flightNumber: String;
+    private flightNumber: string;
     private gate: Gate;
     private plane: Aeroplane;
     private date: Date;
+
+    
     private route: Route;
     private pilot : Pilot;
     private coPilot : CoPilot;
@@ -35,5 +37,7 @@ export class Flight {
     public getDate(): Date {
         return this.date;
     }
-
+    getFlightNumber(): string{
+        return this.flightNumber;
+    }
 };                  
