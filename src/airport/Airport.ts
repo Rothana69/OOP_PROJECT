@@ -8,10 +8,10 @@ export class Airport{
     constructor(airport_name: string){
         this.airport_name = airport_name;
     }
-    add_gate(gate: Gate): Gate[]{
-        return [];
+    add_gate(gate: Gate):void{
+        this.gate_number.push(gate);
     }
-    add_route(route: Route): Route[]{
-        return [];
+    add_route(route: Route): void{
+        this.route_number.push(route);
     }
 }
