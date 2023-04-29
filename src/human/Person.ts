@@ -1,14 +1,14 @@
 import { Date } from "../DateTime/Date";
 import { Gender } from "./Gender";
 export abstract class Person{
-    protected first_name: string
-    protected last_name: string
+    protected firstName: string
+    protected lastName: string
     protected gender: Gender
-    protected date_of_birth: Date
-    constructor(first_name: string, last_name: string, gender: Gender, date_of_birth: Date){
-        this.first_name = first_name
-        this.last_name = last_name
+    protected dateOfBirth: Date
+    constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date){
+        this.firstName = firstName
+        this.lastName = lastName
         this.gender = gender
-        this.date_of_birth = date_of_birth
+        this.dateOfBirth = dateOfBirth
     }
 }
