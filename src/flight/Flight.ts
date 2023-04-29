@@ -1,13 +1,25 @@
 import { Route } from "../airport/Route";
 import { Gate } from "../airport/Gate";
 import { Date } from "../DateTime/Date";
-import { Aeroplanes } from "../company/plane/Aeroplane";
+import { Aeroplane } from "../company/plane/Aeroplane";
 export class Flight{
-    private flight_number: String;
+    private flightNumber: String;
     private gate: Gate;
-    private plane: Aeroplanes;
+    private plane: Aeroplane;
     private date: Date;
-    constructor(flight_number: string){
-        this.flight_number = flight_number;
+    private route: Route;
+    constructor(flightNumber: string, gate: Gate,route:Route, plane: Aeroplane, date: Date) {
+        this.flightNumber = flightNumber;
+        this.date = date;
+        this.gate = gate;
+        this.plane = plane;
+        this.route = route;
+    };
+    public getGate(): Gate { 
+        return this.gate;
     }
-}                          
+    public getDate(): Date { 
+        return this.date;
+    }
+
+};                  
