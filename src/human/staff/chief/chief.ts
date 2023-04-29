@@ -2,14 +2,14 @@ import { Person } from "../../Person";
 import { PilotCategory, Employee } from "../Employee";
 import { Date } from "../../../DateTime/Date";
 import { Gender } from "../../Gender";
-import { Flight } from "../../../flight/Flight";
+import { Meal } from "../../passenger/Meal";
 
 export class Pilot extends Employee{
-    private flights: Flight[] = []
+    private prepare_meals: Meal[] = []
     constructor(firstName: string, lastName: string, gender: Gender, dateOfBirth: Date){
-        super(firstName, lastName, gender, dateOfBirth, PilotCategory.PILOT)
+        super(firstName, lastName, gender, dateOfBirth, PilotCategory.CHIEF)
     }
-    public addFlight(flight: Flight){
-        this.flights.push(flight)
+    public addMeal(meal: Meal){
+        this.prepare_meals.push(meal)
     }
 }
