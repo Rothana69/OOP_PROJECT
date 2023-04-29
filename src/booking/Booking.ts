@@ -1,8 +1,8 @@
 import { TripBooking } from "./BookingTrip/BookingTrip";
 export class Booking{
-    private bookingID: number;
+    private bookingID: string;
     public tripBooking: TripBooking[]=[];
-    constructor(bookingID: number){
+    constructor(bookingID: string){
         this.bookingID= bookingID;
     };
 

@@ -1,8 +1,8 @@
 import { Seat } from "./Seat";
 export class Aeroplanes {
     private seat : Seat[] = [];
+    private registration_number : string;
     constructor(
-        private registration_number: number) {
-
+        registration_number: string) {
     }
 }
