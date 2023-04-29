@@ -1,9 +1,6 @@
-import { Passenger } from "../human/passenger/Passenger";
-import { TripBooking } from "./booking_trip/Booking_Trip";
-
+import { TripBooking } from "./BookingTrip/BookingTrip";
 export class Booking{
     private bookingID: number;
-    private passegger : Passenger;
     public tripBooking: TripBooking[]=[];
     constructor(bookingID: number){
         this.bookingID= bookingID;
@@ -12,7 +9,7 @@ export class Booking{
     addTripBooking(tripBooking: TripBooking){
         this.tripBooking.push(tripBooking);
     };
-    get_passegger(){
-        return this.passegger;
-    }
+    // get_passegger(){
+    //     return this.passegger;
+    // }
 };
